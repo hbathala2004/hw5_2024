@@ -23,7 +23,6 @@ body {
 
 
 .pricing {
-  min-height: 500px;
   display: flex;
   align-items: center;
   flex-wrap: wrap;
@@ -44,7 +43,6 @@ body {
 
 /* Gallery */
 .gallery {
-  min-height: 600px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -140,5 +138,4 @@ header {
 
       
   }
-
 
