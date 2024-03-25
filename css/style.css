@@ -1,0 +1,144 @@
+/* initial changing font and background color */ 
+body {
+  font-family: 'Poppins', sans-serif; 
+  background-image: url('../images/concrete_seamless.png'); 
+  background-color: #f1f1f1; 
+}
+
+@keyframes logo_moves {
+  from {
+    width: 25px;
+    opacity: 0;
+  }
+  to {
+    width: 475px;
+    opacity: 1;
+  }
+} 
+/* used to control duration of animation */
+#logo {
+  animation-name: logo_moves;
+  animation-duration: 5s;
+}
+
+
+.pricing {
+  min-height: 500px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.card {
+  padding: 0 0 50px 0;
+  flex-basis: 325px; 
+}
+/* make sure this is not distorted */
+.card > header {
+  background: #288088;
+  padding: 40px 0; 
+  border-top-left-radius: 50px;
+  border-top-right-radius: 50px;
+}
+
+/* Gallery */
+.gallery {
+  min-height: 600px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.gallery > img {
+  width: 300px;
+  margin: 10px;
+}
+
+/* Nav */
+header {
+  border-bottom: 3px solid #50C7C7;
+  display: flex;
+  flex-direction:column ;
+  align-items: center;
+}
+
+.nav_links {
+  display: flex;
+  flex-direction: column;
+}
+
+.nav_item a {
+  text-decoration: none;
+}
+
+/* children of card class */
+.card > header > * {
+  background: #288088;
+  padding: 20px 0;
+}
+
+/* Media Query for screen size > 900px */
+@media screen and (min-width: 900px) {
+  /* Adjustments for header and nav_links */
+  header {
+    flex-direction: row;
+  }
+
+  .nav_links {
+    margin-left: auto;
+  }
+
+  .nav_item a {
+    padding: 10px;
+  }
+
+  /* adjusting size mentioned in part 12 */
+  .pricing, .card {
+    flex-basis: 275px;
+  }
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+  #logo {
+    animation: none;
+  }
+}
+
+/* for print view figure out how to make it 1pg */
+@media print and (orientation:portrait){
+
+  header{
+    flex-direction:row;
+    justify-content:space-between;   
+  }
+  body{
+    background-image:none;
+   font-family:Arial, Helvetica;
+
+  }
+  .nav_links{
+      flex-direction:row;
+  }
+  .pricing{
+    flex-direction:row;
+    align-items:flex-end;
+}
+  
+  }
+  .card{
+      flex-basis:325px;
+      
+  }
+ 
+  @media print {
+  /* make sure thumbs is being displayed properly */
+  .card li:nth-child(2)::after{
+      content: "\1F44D";
+
+      
+  }
+
+
